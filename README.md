@@ -15,25 +15,7 @@ Install the required dependencies using pip install -r requirements.txt.
 Run app.py to launch the dashboard in your web browser.
 
 Generating Test Data
-To generate 200 records of test data for this application, run the generate_test_data.py script. This script creates a CSV file named home_equity_data.csv in the project directory, overwriting any existing file.
-
-
-script
-import pandas as pd
-import numpy as np
-# Generate 200 records of dummy data
-np.random.seed(0)  # For reproducibility
-data = pd.DataFrame({
-    'Property ID': np.arange(1, 201),
-    'Location': np.random.choice(['Location A', 'Location B', 'Location C', 'Location D'], 200),
-    'Size': np.random.choice([100, 200, 300, 400], 200),
-    'Home Equity': np.random.randint(100000, 500000, 200),
-    'Financial Stability': np.random.randint(1, 100, 200),
-    'Interest Level': np.random.choice(['High', 'Medium', 'Low'], 200),
-})
-
-# Save to CSV, overwriting any existing file
-data.to_csv('home_equity_data.csv', index=False)
+Generate 200 records of test data for this application, run the generate_test_data.py script. This script creates a CSV file named home_equity_data.csv in the project directory, overwriting any existing file.
 
 Dependencies
 Taipy
