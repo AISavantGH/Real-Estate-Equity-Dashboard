@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+import random
+
+# Define the number of records
+num_records = 200
+
+# Generate test data
+data = {
+    "Property ID": np.arange(1, num_records + 1),
+    "Location": [f"Location {random.randint(1, 50)}" for _ in range(num_records)],
+    "Size": np.random.randint(50, 300, size=num_records),  # Random sizes between 50 and 300
+    "Home Equity": np.random.randint(10000, 100000, size=num_records),  # Random home equity values between 10,000 and 100,000
+    "Financial Stability": np.random.randint(1, 100, size=num_records),  # Random financial stability scores between 1 and 100
+    "Interest Level": [random.choice(["High", "Medium", "Low"]) for _ in range(num_records)],  # Random interest levels
+}
+
+# Convert the dictionary to a DataFrame
+df = pd.DataFrame(data)
+
+# Specify your file path here
+file_path = 'home_equity_data.csv'
+
+# Save the DataFrame to a CSV file, overwriting any existing file
+df.to_csv(file_path, index=False)
+
+print(f"Generated data saved to {file_path}")
